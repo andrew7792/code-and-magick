@@ -1,13 +1,40 @@
-window.renderStatistics = function(ctx, names, times){
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
-    ctx.fillRect = (100,10,270,420);
-    ctx.font = "16px PT Mono";
-    ctx.fillText = ("Ура вы победили!\\nСписок результатов:",10,50);
+var fireballSize = 22;
+var getFireballSpeed = function (left){
+    if (left===true){
+        return 5;
+    }else{
+        return 2;
+    }
+}
+var wizardSpeed = 3;
+var wizardWidth = 70;
+function getWizardHeight(ballWidth){
+    ballWidth = ballWidth * 1.337;
+    return ballWidth;
+}
+function getWizardX(width){
+    width = width / 2;
+    return width;
+}
+function getWizardY(height){
+    height = height * 2/3;
+    return height;
 }
 
-// Высота гистограммы 150px.
-//     o Ширина колонки 40px.
-//     o Расстояние между колонками 50px.
-//     o Цвет колонки игрока Вы rgba(255, 0, 0, 1).
-//     o Цвета колонок других игроков — синие, а прозрачность задается случайным
-// образом.
+window.renderStatistics = function(ctx, names, times){
+    /*text*/
+    ctx.fillText("Ура вы победили!", 250, 77);
+    ctx.fillText("Список результатов:", 250, 97);
+    ctx.font="30px Georgia";
+    ctx.fillStyle = "black";
+    ctx.stroke();
+    /*---text---*/
+    /*shadow*/
+    ctx.shadowBlur = 20;
+    ctx.shadowColor = "rgba(0, 0, 0, 0.7)";
+    /*---shadow---*/
+    /*cloud*/
+    ctx.fillStyle = "rgba(255, 255, 255, 0.3)";
+    ctx.fillRect(100, 10,420,270);
+    /*---cloud---*/
+}
