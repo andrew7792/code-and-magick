@@ -21,6 +21,9 @@ function getWizardY(height){
     return height;
 }
 
+
+
+
 (function () {
     var titleX = 220;
     var titleY = 25;
@@ -49,7 +52,7 @@ function getWizardY(height){
     }
 
     window.renderStatistics = function (ctx, names, times) {
-        //облако
+        //cloud
         ctx.shadowBlur = '20';
         ctx.shadowColor = "rgba(0, 0, 0, 0.7)";
         ctx.shadowOffsetX = 15;
@@ -58,7 +61,7 @@ function getWizardY(height){
         ctx.fillRect(100, 10, 420, 270);
 
 
-        //заголовки
+        //titles
         ctx.fillStyle = 'rgba(255, 0, 0, 1)';
         ctx.font = '16px PT Mono';
         ctx.textBaseline = 'hanging';
@@ -68,9 +71,9 @@ function getWizardY(height){
 
         var maxTime = getMaxElement(times);
 
-        //график
+        //graphic
         for (var i = 0; i < names.length; i++) {
-            ctx.fillStyle = 'rgba(0, 0,' + (Math.random() * 250).toFixed(0) + ',' + (Math.random() + 0.4).toFixed(1) + ')';
+            ctx.fillStyle = 'rgba( ' + (Math.random() * 250).toFixed(0) +',' + (Math.random() * 250).toFixed(0) + ',' + (Math.random() * 250).toFixed(0) + ',' + (Math.random() + 0.4).toFixed(1) + ')';
             if (names[i] === 'Вы') {
                 ctx.fillStyle = 'rgba(255, 0, 0, 1)';
             }
