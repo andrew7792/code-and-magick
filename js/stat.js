@@ -81,7 +81,5 @@ function getWizardY(height){
             ctx.fillText(names[i], columnX + (columnWidth + columnGap) * i, columnY);
             ctx.fillText(times[i].toFixed(0), columnX + (columnWidth + columnGap) * i, columnY - (columnHeight * times[i] / maxTime) - numberGap);
         }
-
-
     };
 })();
