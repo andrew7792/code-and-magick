@@ -38,6 +38,7 @@ for(var i = 0; i < heroes.length; i++ ){
     var heroName = wizzardElement.querySelector('.setup-similar-label');
     heroName.textContent = heroes[i].name//имя игрока
     var wizzardCoat = wizzardElement.querySelector('.wizard-coat');
+
     wizzardCoat.style.fill = heroes[i].coatColor//Цвет мантии coatColor задайте как цвет заливки fill в стилях элемента
     var wizzardEyes = wizzardElement.querySelector('.wizard-eyes');
     wizzardEyes.style.fill = heroes[i].eyesColor//Цвет глаз eyesColor задайте как цвет заливки fill в стилях элемента eyesColor
