@@ -52,7 +52,7 @@
 
   <h1 class="header-title section-title">
     Code&thinsp;and&thinsp;Magick
-    <img src="img/title-site.png" alt="Code and magick">
+    <img src="img/title-site.png" alt="Code and magick" >
   </h1>
   <p class="header-description">
     Это игра, где главного героя, которым вам предстоит управлять и изменять заклинаниями окружающий мир зовут
@@ -63,7 +63,7 @@
   <div class="demo"></div>
 
   <div class="setup-open">
-    <img src="./img/user-1.jpg" class="setup-open-icon">
+    <img src="./img/user-1.jpg" class="setup-open-icon" tabindex="0">
   </div>
 </header>
 
@@ -86,7 +86,7 @@
         </label>
       </div>
 
-      <span class="setup-close">&times;</span>
+      <span class="setup-close" tabindex="0">&times;</span>
     </div>
 
 
@@ -180,61 +180,9 @@
     <p class="setup-similar-label">Петр Петров</p>
   </div>
 </template>
-<script>
-//     Объявите переменную fireballSize, которая будет управлять размером
-//     фаербола в пикселях. Поиграйте размерами фаербола и установите его
-//     равным 22.
-// • Объявите переменную getFireballSpeed, которая будет управлять
-//     скоростью фаербола в зависимости от направления ветра в игре.
-//         Значением этой переменной должна быть функция c одним параметром
-// — left (направление полёта фаербола), если параметр left — true, то
-//     фаербол летит по ветру и функция возвращает скорость равную 5, иначе
-//     он летит против ветра со скоростью 2.
-// • Установите скорость мага wizardSpeed равной 3.
-// • Установите ширину мага wizardWidth равной 70.
-// • Задайте переменной getWizardHeight функцию, которая возвращает
-//     пропорциональную высоту мага, т. е. высота мага — это пропорция
-//     1.337 * ширина мага.
-// • Определите функцию getWizardX c одним параметром — width. Игра
-//     будет вызывать вашу функцию и передавать в неё этот параметр
-//     (который обозначает ширину игровой области). Результат,
-//         возвращаемый вашей функцией, игра будет использовать, чтобы задать
-//     положение мага по горизонтали. Напишите функцию так, чтобы центр
-//     фигурки мага находился по середине игрового поля.
-// • Определите функцию getWizardY c одним параметром — height. Игра
-//     будет вызывать вашу функцию и передавать в неё этот параметр
-//     (который обозначает высоту игровой области). Результат,
-//         возвращаемый вашей функцией, игра будет использовать, чтобы задать
-//     положение мага по вертикали. Напишите функцию так, чтобы маг
-//     появлялся на высоте две трети игрового поля от земли.
 
-
-  let fireballSize = 22;
-  var getFireballSpeed;
-  function left(){
-      if (left){
-          getFireballSpeed = 5;
-      }
-      if(!left){
-          getFireballSpeed = 2;
-      }
-  }
-  let wizardSpeed = 3;
-  let wizardWidth = 70;
-  function getWizardHeight(ballWidth){
-      ballWidth = ballWidth * 1.337
-      return ballWidth;
-  }
-  function getWizardX(width){
-      width = width / 2;
-      return width;
-  }
-  function getWizardY(height){
-      height = height * 2/3;
-      return height;
-  }
-
-</script>
+<script src="js/setup.js"></script>
+<script src="js/stat.js"></script>
 <script src="js/game.js"></script>
 
 </body>
