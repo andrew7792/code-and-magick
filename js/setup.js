@@ -43,10 +43,49 @@ setupClose.addEventListener('keydown',function(evt){
     }
 });
 
+/*color heroes*/
+ var setupColorsSelector = document.querySelector('.setup-wizard');
+
+/*COAT COLORS*/
+var wizardCoatRandom = setupColorsSelector.querySelector('.wizard-coat');
+
+var wizardColorsCoats = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', ' rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
+
+wizardCoatRandom.addEventListener('click', function(){
+    wizardCoatRandom.style.fill = wizardColorsCoats[Math.floor(Math.random() * 5)];
+});
+/*---COAT COLORS---*/
+
+/*EYES COLORS*/
+var wizardEyesRandom = document.querySelector('.wizard-eyes');
+
+var wizardColorsEyes = ['black', 'red', 'blue', 'yellow', 'green'];
+
+wizardEyesRandom.addEventListener('click', function(){
+    wizardEyesRandom.style.fill = wizardColorsEyes[Math.floor(Math.random() * 4)];
+});
+/*---EYES COLORS---*/
+
+/*FIREBALL COLORS*/
+var wizardFireball = document.querySelector('.setup-fireball-wrap');
+
+var wizardColorsFireballs = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
+
+wizardFireball.addEventListener('click', function(){
+    wizardFireball.style.background = wizardColorsFireballs[Math.floor(Math.random() * 4)];
+});
+/*---FIREBALL COLORS---*/
+
+/*---color heroes---*/
+
+
+
 
 var similarListElement = document.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content;
+var anotherHeroesOpen = document.querySelector('.setup-similar');
 
+anotherHeroesOpen.classList.remove('hidden')
 
 var heroes = [
     {
@@ -75,16 +114,15 @@ var heroes = [
 ];
 
 for(var i = 0; i < heroes.length; i++ ){
-    var wizzardElement = similarWizardTemplate.cloneNode(true);
+    var wizardElement = similarWizardTemplate.cloneNode(true);
 
-    var heroName = wizzardElement.querySelector('.setup-similar-label');
+    var heroName = wizardElement.querySelector('.setup-similar-label');
     heroName.textContent = heroes[i].name//имя игрока
-    var wizzardCoat = wizzardElement.querySelector('.wizard-coat');
+    var wizardCoat = wizardElement.querySelector('.wizard-coat');
 
-    wizzardCoat.style.fill = heroes[i].coatColor//Цвет мантии coatColor задайте как цвет заливки fill в стилях элемента
-    var wizzardEyes = wizzardElement.querySelector('.wizard-eyes');
-    wizzardEyes.style.fill = heroes[i].eyesColor//Цвет глаз eyesColor задайте как цвет заливки fill в стилях элемента eyesColor
-    similarListElement.appendChild(wizzardElement);
+    wizardCoat.style.fill = heroes[i].coatColor//Цвет мантии coatColor задайте как цвет заливки fill в стилях элемента
+    var wizardEyes = wizardElement.querySelector('.wizard-eyes');
+    wizardEyes.style.fill = heroes[i].eyesColor//Цвет глаз eyesColor задайте как цвет заливки fill в стилях элемента eyesColor
+    similarListElement.appendChild(wizardElement);
 }
-
 
