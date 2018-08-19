@@ -79,4 +79,33 @@ wizardFireball.addEventListener('click', function(){
 
 /*---color heroes---*/
 
+var similarListElement = document.querySelector('.setup-similar-list');
+var similarWizardTemplate = document.querySelector('#similar-wizard-template').content;
+var anotherHeroesOpen = document.querySelector('.setup-similar');
 
+anotherHeroesOpen.classList.remove('hidden');
+
+function onSuccessLoad(heroes) {
+    for(var i = 0; i < heroes.length; i++ ){
+        var wizardElement = similarWizardTemplate.cloneNode(true);
+
+        var heroName = wizardElement.querySelector('.setup-similar-label');
+        heroName.textContent = heroes[i].name//имя игрока
+        var wizardCoat = wizardElement.querySelector('.wizard-coat');
+
+        wizardCoat.style.fill = heroes[i].coatColor//Цвет мантии coatColor задайте как цвет заливки fill в стилях элемента
+        var wizardEyes = wizardElement.querySelector('.wizard-eyes');
+        wizardEyes.style.fill = heroes[i].eyesColor//Цвет глаз eyesColor задайте как цвет заливки fill в стилях элемента eyesColor
+        similarListElement.appendChild(wizardElement);
+    }
+}
+
+function onSuccessUpload() {
+    window.closePopup();
+}
+
+function onErrorEvent(errorMessage) {
+    window.error(errorMessage);
+}
+
+window.backend.load(onSuccessLoad, onErrorEvent);

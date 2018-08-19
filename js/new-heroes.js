@@ -1,8 +1,4 @@
-var similarListElement = document.querySelector('.setup-similar-list');
-var similarWizardTemplate = document.querySelector('#similar-wizard-template').content;
-var anotherHeroesOpen = document.querySelector('.setup-similar');
 
-anotherHeroesOpen.classList.remove('hidden')
 
 var heroes = [
     {

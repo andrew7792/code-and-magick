@@ -1,5 +1,5 @@
 'use strict';
-var userDialog = document.querySelector('.setup');
+//var userDialog = document.querySelector('.setup');
 var dialogHandle = userDialog.querySelector('.setup-user-pic');
 
 dialogHandle.addEventListener('mousedown', function(evt){
